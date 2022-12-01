@@ -1,8 +1,8 @@
 package com.iman.story_akhir1.core.data.remote.network
 
-import com.story.app.core.data.remote.model.GeneralResponse
-import com.story.app.core.data.remote.model.LoginResponse
-import com.story.app.core.data.remote.model.StoriesResponse
+import com.iman.story_akhir1.core.data.remote.model.GeneralRespon
+import com.iman.story_akhir1.core.data.remote.model.LoginRespon
+import com.iman.story_akhir1.core.data.remote.model.StoriesRespon
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -13,7 +13,7 @@ interface ApiService {
     suspend fun doLogin(
         @Field("email") email: String,
         @Field("password") password: String
-    ): LoginResponse
+    ): LoginRespon
 
     @FormUrlEncoded
     @POST("register")
@@ -21,7 +21,7 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String,
         @Field("name") name: String
-    ): GeneralResponse
+    ): GeneralRespon
 
 
     @GET("stories")
@@ -30,7 +30,7 @@ interface ApiService {
         @Query("page") page: String? = null,
         @Query("size") size: String? = null,
         @Query("location") location: String? = null,
-    ): StoriesResponse
+    ): StoriesRespon
 
     @Multipart
     @POST("stories")
@@ -40,5 +40,5 @@ interface ApiService {
         @Part("description") description: RequestBody,
         @Part("lat") lat: Float,
         @Part("lon") lon: Float
-    ): GeneralResponse
+    ): GeneralRespon
 }

@@ -1,10 +1,10 @@
 package com.iman.story_akhir1.di
 
-import com.story.app.ui.add.AddViewModel
-import com.story.app.ui.home.HomeViewModel
-import com.story.app.ui.login.LoginViewModel
-import com.story.app.ui.maps.MapsViewModel
-import com.story.app.ui.register.RegisterViewModel
+import com.iman.story_akhir1.ui.add.AddViewModel
+import com.iman.story_akhir1.ui.home.HomeViewModel
+import com.iman.story_akhir1.ui.login.LoginViewModel
+import com.iman.story_akhir1.ui.maps.MapsViewModel
+import com.iman.story_akhir1.ui.register.RegisterViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

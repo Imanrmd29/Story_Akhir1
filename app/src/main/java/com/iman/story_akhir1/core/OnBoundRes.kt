@@ -1,15 +1,15 @@
 package com.iman.story_akhir1.core
 
 import android.util.Log
-import com.iman.story_akhir1.core.data.remote.network.ApiResponse
+import com.iman.story_akhir1.core.data.remote.network.ApiRespon
 import kotlinx.coroutines.flow.*
 
-abstract class OnlineBoundResource<RequestType> {
+abstract class OnlineBoundRes<RequestType> {
     private var result: Flow<Resource<RequestType>> = flow {
 
         emit(Resource.Loading())
         when (val apiResponse = createCall().first()) {
-            is ApiResponse.Success -> {
+            is ApiRespon.Success -> {
                 getResponse(apiResponse.body)
                 emit(Resource.Success(apiResponse.body))
                 /* emitAll(
@@ -17,8 +17,8 @@ abstract class OnlineBoundResource<RequestType> {
                      Resource.Success(it)
                  })*/
             }
-            is ApiResponse.Empty -> {}
-            is ApiResponse.Error -> {
+            is ApiRespon.Empty -> {}
+            is ApiRespon.Error -> {
                 emit(Resource.Error(apiResponse.errorMessage))
                 Log.e("OnlineBoundResource", apiResponse.errorMessage)
             }
@@ -26,7 +26,7 @@ abstract class OnlineBoundResource<RequestType> {
 
     }
 
-    protected abstract suspend fun createCall(): Flow<ApiResponse<RequestType>>
+    protected abstract suspend fun createCall(): Flow<ApiRespon<RequestType>>
 
     protected abstract fun getResponse(data: RequestType)
 

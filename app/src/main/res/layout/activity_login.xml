@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/image_logo"
         tools:alpha="1">
 
-        <com.story.app.ui.custom.CustomTextInput
+        <com.iman.story_akhir1.ui.custom.CustomTextInput
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/til_email"
         tools:alpha="1">
 
-        <com.story.app.ui.custom.CustomTextInput
+        <com.iman.story_akhir1.ui.custom.CustomTextInput
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.story.app.ui.custom.CustomButton
+    <com.iman.story_akhir1.ui.custom.CustomButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

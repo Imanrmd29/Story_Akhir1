@@ -4,9 +4,9 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.story.app.core.data.local.entity.StoryEntity
-import com.story.app.core.data.local.room.StoryDatabase
-import com.story.app.core.data.remote.network.ApiService
+import com.iman.story_akhir1.core.data.local.entity.StoryEntity
+import com.iman.story_akhir1.core.data.local.room.StoryDatabase
+import com.iman.story_akhir1.core.data.remote.network.ApiService
 import kotlinx.coroutines.flow.Flow
 
 class StoryPagingSource(

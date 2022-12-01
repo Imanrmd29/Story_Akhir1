@@ -6,9 +6,9 @@ import com.iman.story_akhir1.core.data.local.LocalDatasource
 import com.iman.story_akhir1.core.data.local.entity.StoryEntity
 import com.iman.story_akhir1.core.data.paging.StoryPagingSource
 import com.iman.story_akhir1.core.data.remote.RemoteDatasource
-import com.iman.story_akhir1.core.data.remote.model.GeneralResponse
-import com.iman.story_akhir1.core.data.remote.model.LoginResponse
-import com.iman.story_akhir1.core.data.remote.network.ApiResponse
+import com.iman.story_akhir1.core.data.remote.model.GeneralRespon
+import com.iman.story_akhir1.core.data.remote.model.LoginRespon
+import com.iman.story_akhir1.core.data.remote.network.ApiRespon
 import kotlinx.coroutines.flow.Flow
 import okhttp3.MultipartBody
 
@@ -17,14 +17,14 @@ class DataRepo(
     private val sharedPreferenceProvider: SharedPreferenceProvider,
     private val storyPagingSource: StoryPagingSource,
     private val localDatasource: LocalDatasource
-): DataRepositoryImpl {
-    override fun doLogin(email: String, password: String): Flow<Resource<LoginResponse>> {
-        return object : OnlineBoundResource<LoginResponse>() {
-            override suspend fun createCall(): Flow<ApiResponse<LoginResponse>> {
+): DataRepoImpl {
+    override fun doLogin(email: String, password: String): Flow<Resource<LoginRespon>> {
+        return object : OnlineBoundRes<LoginRespon>() {
+            override suspend fun createCall(): Flow<ApiRespon<LoginRespon>> {
                 return remoteDatasource.doLogin(email, password)
             }
 
-            override fun getResponse(data: LoginResponse) {
+            override fun getResponse(data: LoginRespon) {
                 sharedPreferenceProvider.setToken(data.loginResult?.token)
                 sharedPreferenceProvider.setUserId(data.loginResult?.userId)
                 sharedPreferenceProvider.setName(data.loginResult?.name)
@@ -36,13 +36,13 @@ class DataRepo(
         email: String,
         password: String,
         name: String
-    ): Flow<Resource<GeneralResponse>> {
-        return object : OnlineBoundResource<GeneralResponse>() {
-            override suspend fun createCall(): Flow<ApiResponse<GeneralResponse>> {
+    ): Flow<Resource<GeneralRespon>> {
+        return object : OnlineBoundRes<GeneralRespon>() {
+            override suspend fun createCall(): Flow<ApiRespon<GeneralRespon>> {
                 return remoteDatasource.doRegister(email, password, name)
             }
 
-            override fun getResponse(data: GeneralResponse) {
+            override fun getResponse(data: GeneralRespon) {
 
             }
         }.asFlow()
@@ -54,13 +54,13 @@ class DataRepo(
         description: String,
         lat: Float,
         lon: Float
-    ): Flow<Resource<GeneralResponse>> {
-        return object : OnlineBoundResource<GeneralResponse>() {
-            override suspend fun createCall(): Flow<ApiResponse<GeneralResponse>> {
+    ): Flow<Resource<GeneralRespon>> {
+        return object : OnlineBoundRes<GeneralRespon>() {
+            override suspend fun createCall(): Flow<ApiRespon<GeneralRespon>> {
                 return remoteDatasource.addNewStory(token, file, description, lat, lon)
             }
 
-            override fun getResponse(data: GeneralResponse) {
+            override fun getResponse(data: GeneralRespon) {
 
             }
         }.asFlow()

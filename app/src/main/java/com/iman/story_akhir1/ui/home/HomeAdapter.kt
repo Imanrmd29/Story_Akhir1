@@ -10,10 +10,9 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.story.app.core.data.local.entity.StoryEntity
-import com.story.app.core.data.remote.model.ListStoryItem
-import com.story.app.databinding.ItemHomeBinding
-import com.story.app.ui.detail.DetailActivity
+import com.iman.story_akhir1.core.data.local.entity.StoryEntity
+import com.iman.story_akhir1.databinding.ItemDihomeBinding
+import com.iman.story_akhir1.ui.detail.DetailActivity
 
 class HomeAdapter : PagingDataAdapter<StoryEntity, HomeAdapter.ViewHolder>(DIFF_CALLBACK) {
 
@@ -31,7 +30,7 @@ class HomeAdapter : PagingDataAdapter<StoryEntity, HomeAdapter.ViewHolder>(DIFF_
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemDihomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -40,7 +39,7 @@ class HomeAdapter : PagingDataAdapter<StoryEntity, HomeAdapter.ViewHolder>(DIFF_
         holder.bind(result)
     }
 
-    class ViewHolder(private val binding: ItemHomeBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemDihomeBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(result: StoryEntity?) {
             with(binding) {
                 result?.apply {

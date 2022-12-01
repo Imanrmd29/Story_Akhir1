@@ -2,8 +2,8 @@ package com.iman.story_akhir1.core.data.local.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.story.app.core.data.local.entity.RemoteKeys
-import com.story.app.core.data.local.entity.StoryEntity
+import com.iman.story_akhir1.core.data.local.entity.RemoteKeys
+import com.iman.story_akhir1.core.data.local.entity.StoryEntity
 
 @Database(
     entities = [StoryEntity::class, RemoteKeys::class],

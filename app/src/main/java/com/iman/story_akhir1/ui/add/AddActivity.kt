@@ -1,6 +1,6 @@
 package com.iman.story_akhir1.ui.add
 
-import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.Manifest
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
@@ -22,13 +22,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.story.app.R
-import com.story.app.common.CameraUtility
-import com.story.app.common.SharedPreferenceProvider
-import com.story.app.core.Resource
-import com.story.app.databinding.ActivityAddBinding
-import com.story.app.ui.custom.CustomTextInput
-import com.story.app.ui.home.HomeActivity
+import com.iman.story_akhir1.R
+import com.iman.story_akhir1.com.CamUtility
+import com.iman.story_akhir1.com.SharedPreferenceProvider
+import com.iman.story_akhir1.core.Resource
+import com.iman.story_akhir1.databinding.ActivityAddBinding
+import com.iman.story_akhir1.ui.custom.CustomTextInput
+import com.iman.story_akhir1.ui.home.HomeActivity
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -36,7 +36,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.*
 
 class AddActivity : AppCompatActivity(), LocationListener {
-    private lateinit var binding: ActivityAddBinding
+    private lateinit var binding : ActivityAddBinding
     private val viewModel: AddViewModel by viewModel()
     private var getFile: File? = null
     private lateinit var currentPhotoPath: String
@@ -154,7 +154,7 @@ class AddActivity : AppCompatActivity(), LocationListener {
     private fun openCamera() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         intent.resolveActivity(packageManager)
-        CameraUtility.createCustomTempFile(application).also {
+        CamUtility.createCustomTempFile(application).also {
             val photoURI: Uri = FileProvider.getUriForFile(
                 this,
                 "com.story.app",
@@ -169,7 +169,7 @@ class AddActivity : AppCompatActivity(), LocationListener {
 
     private fun uriToFile(selectedImg: Uri, context: Context): File {
         val contentResolver: ContentResolver = context.contentResolver
-        val myFile = CameraUtility.createCustomTempFile(context)
+        val myFile = CamUtility.createCustomTempFile(context)
 
         val inputStream = contentResolver.openInputStream(selectedImg) as InputStream
         val outputStream: OutputStream = FileOutputStream(myFile)
@@ -203,8 +203,8 @@ class AddActivity : AppCompatActivity(), LocationListener {
 
     private fun getLocation() {
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        if ((ContextCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
-            ActivityCompat.requestPermissions(this, arrayOf(ACCESS_FINE_LOCATION), 2)
+        if ((ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 2)
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
     }

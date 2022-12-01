@@ -2,9 +2,9 @@ package com.iman.story_akhir1.ui.register
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.story.app.core.DataRepository
+import com.iman.story_akhir1.core.DataRepo
 
-class RegisterViewModel(private val dataRepository: DataRepository) : ViewModel() {
+class RegisterViewModel(private val dataRepository: DataRepo) : ViewModel() {
     private var name = ""
     private var email = ""
     private var password = ""

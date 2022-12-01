@@ -5,8 +5,8 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.story.app.core.data.local.entity.RemoteKeys
-import com.story.app.core.data.local.entity.StoryEntity
+import com.iman.story_akhir1.core.data.local.entity.RemoteKeys
+import com.iman.story_akhir1.core.data.local.entity.StoryEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

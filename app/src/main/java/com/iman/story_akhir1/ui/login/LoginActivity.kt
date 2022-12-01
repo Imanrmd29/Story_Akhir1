@@ -8,13 +8,13 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import androidx.constraintlayout.motion.widget.MotionLayout
-import com.story.app.R
-import com.story.app.common.SharedPreferenceProvider
-import com.story.app.core.Resource
-import com.story.app.databinding.ActivityLoginBinding
-import com.story.app.ui.custom.CustomTextInput
-import com.story.app.ui.home.HomeActivity
-import com.story.app.ui.register.RegisterActivity
+import com.iman.story_akhir1.R
+import com.iman.story_akhir1.com.SharedPreferenceProvider
+import com.iman.story_akhir1.core.Resource
+import com.iman.story_akhir1.databinding.ActivityLoginBinding
+import com.iman.story_akhir1.ui.custom.CustomTextInput
+import com.iman.story_akhir1.ui.home.HomeActivity
+import com.iman.story_akhir1.ui.register.RegisterActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {

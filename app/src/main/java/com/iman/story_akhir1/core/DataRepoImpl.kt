@@ -2,16 +2,16 @@ package com.iman.story_akhir1.core
 
 import androidx.paging.PagingData
 import com.iman.story_akhir1.core.data.local.entity.StoryEntity
-import com.iman.story_akhir1.core.data.remote.model.GeneralResponse
-import com.iman.story_akhir1.core.data.remote.model.LoginResponse
+import com.iman.story_akhir1.core.data.remote.model.GeneralRespon
+import com.iman.story_akhir1.core.data.remote.model.LoginRespon
 import kotlinx.coroutines.flow.Flow
 import okhttp3.MultipartBody
 
-interface DataRepositoryImpl {
+interface DataRepoImpl {
 
-    fun doLogin(email: String, password: String): Flow<Resource<LoginResponse>>
+    fun doLogin(email: String, password: String): Flow<Resource<LoginRespon>>
 
-    fun doRegister(email: String, password: String, name: String): Flow<Resource<GeneralResponse>>
+    fun doRegister(email: String, password: String, name: String): Flow<Resource<GeneralRespon>>
 
     fun addNewStory(
         token: String,
@@ -19,7 +19,7 @@ interface DataRepositoryImpl {
         description: String,
         lat: Float,
         lon: Float
-    ): Flow<Resource<GeneralResponse>>
+    ): Flow<Resource<GeneralRespon>>
 
     fun getStories(token: String): Flow<PagingData<StoryEntity>>
 

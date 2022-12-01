@@ -9,5 +9,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_dicoding">#2D3F50</color>
     <color name="blue_dicoding_disabled">#9AC8F4</color>
-    <color name="pink">#FFF6E5</color>
+    <color name="navi">#2D3D4F</color>
+    <color name="navi_200">#49617E</color>
+    <color name="gray">#E1DEDE</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="pink1">#ffadbb</color>
+    <color name="pink2">#ffb6c1</color>
+    <color name="pink3">#f8bdc6</color>
+    <color name="pink_gelap">#ff5f77</color>
+    <color name="textColorPrimary">#222223</color>
+    <color name="textColorPrimaryDark">#080808</color>
 </resources>

@@ -3,10 +3,11 @@ package com.iman.story_akhir1.ui.detail
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.story.app.core.data.local.entity.StoryEntity
-import com.story.app.databinding.ActivityDetailBinding
-import com.story.app.ui.home.HomeAdapter
+import com.iman.story_akhir1.core.data.local.entity.StoryEntity
+import com.iman.story_akhir1.databinding.ActivityDetailBinding
+import com.iman.story_akhir1.ui.home.HomeAdapter
 
+@Suppress("DEPRECATION")
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
 
@@ -22,8 +23,8 @@ class DetailActivity : AppCompatActivity() {
         with(binding) {
             data?.apply {
                 supportActionBar?.title = name
-                tvName.text = name
-                tvDesc.text = description
+                tvUsername.text = name
+                tvDetailStory.text = description
                 Glide.with(this@DetailActivity)
                     .load(photoUrl)
                     .into(ivStory)

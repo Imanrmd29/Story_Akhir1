@@ -10,8 +10,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-import com.story.app.R
-import com.story.app.databinding.ActivityMapsBinding
+import com.iman.story_akhir1.R
+import com.iman.story_akhir1.databinding.ActivityMapsBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {

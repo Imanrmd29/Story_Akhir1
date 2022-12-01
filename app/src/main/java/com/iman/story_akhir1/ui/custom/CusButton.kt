@@ -7,9 +7,9 @@ import android.util.AttributeSet
 import android.view.Gravity
 import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
-import com.story.app.R
+import com.iman.story_akhir1.R
 
-class CusButton: MaterialButton {
+class CustomButton: MaterialButton {
     private lateinit var enabledBackground: Drawable
     private lateinit var disabledBackground: Drawable
     private var txtColor: Int = 0

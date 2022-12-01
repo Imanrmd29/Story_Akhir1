@@ -8,10 +8,10 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.story.app.R
-import com.story.app.core.Resource
-import com.story.app.databinding.ActivityRegisterBinding
-import com.story.app.ui.custom.CustomTextInput
+import com.iman.story_akhir1.R
+import com.iman.story_akhir1.core.Resource
+import com.iman.story_akhir1.databinding.ActivityRegisterBinding
+import com.iman.story_akhir1.ui.custom.CustomTextInput
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RegisterActivity : AppCompatActivity() {

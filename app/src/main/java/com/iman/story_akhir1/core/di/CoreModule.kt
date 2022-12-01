@@ -1,13 +1,13 @@
 package com.iman.story_akhir1.core.di
 
 import androidx.room.Room
-import com.story.app.common.SharedPreferenceProvider
-import com.story.app.core.DataRepository
-import com.story.app.core.data.local.LocalDatasource
-import com.story.app.core.data.local.room.StoryDatabase
-import com.story.app.core.data.paging.StoryPagingSource
-import com.story.app.core.data.remote.RemoteDatasource
-import com.story.app.core.data.remote.network.ApiService
+import com.iman.story_akhir1.com.SharedPreferenceProvider
+import com.iman.story_akhir1.core.DataRepo
+import com.iman.story_akhir1.core.data.local.LocalDatasource
+import com.iman.story_akhir1.core.data.local.room.StoryDatabase
+import com.iman.story_akhir1.core.data.paging.StoryPagingSource
+import com.iman.story_akhir1.core.data.remote.RemoteDatasource
+import com.iman.story_akhir1.core.data.remote.network.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -16,7 +16,6 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-
 
 val databaseModule = module {
     factory { get<StoryDatabase>().dao() }
@@ -57,7 +56,7 @@ val networkModule = module {
 val repositoryModule = module {
     single { RemoteDatasource(get(), get()) }
     single { SharedPreferenceProvider(get()) }
-    single { DataRepository(get(), get(), get(), get()) }
+    single { DataRepo(get(), get(), get(), get()) }
     single { StoryPagingSource(get(), get()) }
     single { LocalDatasource(get()) }
 }

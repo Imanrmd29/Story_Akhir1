@@ -2,13 +2,13 @@ package com.iman.story_akhir1.core.data.remote
 
 import android.content.Context
 import android.util.Log
-import com.story.app.R
-import com.story.app.core.data.remote.model.EmailResponse
-import com.story.app.core.data.remote.model.GeneralResponse
-import com.story.app.core.data.remote.model.LoginResponse
-import com.story.app.core.data.remote.model.StoriesResponse
-import com.story.app.core.data.remote.network.ApiResponse
-import com.story.app.core.data.remote.network.ApiService
+import com.iman.story_akhir1.R
+import com.iman.story_akhir1.core.data.remote.model.EmailRespon
+import com.iman.story_akhir1.core.data.remote.model.GeneralRespon
+import com.iman.story_akhir1.core.data.remote.model.LoginRespon
+import com.iman.story_akhir1.core.data.remote.model.StoriesRespon
+import com.iman.story_akhir1.core.data.remote.network.ApiRespon
+import com.iman.story_akhir1.core.data.remote.network.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import okhttp3.MediaType.Companion.toMediaType
@@ -24,14 +24,14 @@ class RemoteDatasource(
     private val context: Context
 ) {
 
-    suspend fun doLogin(email: String, password: String): Flow<ApiResponse<LoginResponse>> {
+    suspend fun doLogin(email: String, password: String): Flow<ApiRespon<LoginRespon>> {
         return flow {
             try {
-                val response = apiService?.doLogin(email, password)
-                if (response != null) {
-                    emit(ApiResponse.Success(response))
+                val respon = apiService?.doLogin(email, password)
+                if (respon != null) {
+                    emit(ApiRespon.Success(respon))
                 } else {
-                    emit(ApiResponse.Empty)
+                    emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
                 emit(exceptionLog(e, "doLogin"))
@@ -43,14 +43,14 @@ class RemoteDatasource(
         email: String,
         password: String,
         name: String
-    ): Flow<ApiResponse<GeneralResponse>> {
+    ): Flow<ApiRespon<GeneralRespon>> {
         return flow {
             try {
-                val response = apiService?.doRegister(email, password, name)
-                if (response != null) {
-                    emit(ApiResponse.Success(response))
+                val respon = apiService?.doRegister(email, password, name)
+                if (respon != null) {
+                    emit(ApiRespon.Success(respon))
                 } else {
-                    emit(ApiResponse.Empty)
+                    emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
                 emit(exceptionLog(e, "doRegister"))
@@ -63,14 +63,14 @@ class RemoteDatasource(
         page: String?,
         size: String?,
         location: String?
-    ): Flow<ApiResponse<StoriesResponse>> {
+    ): Flow<ApiRespon<StoriesRespon>> {
         return flow {
             try {
-                val response = apiService?.getStories(token, page, size, location)
-                if (response != null) {
-                    emit(ApiResponse.Success(response))
+                val respon = apiService?.getStories(token, page, size, location)
+                if (respon != null) {
+                    emit(ApiRespon.Success(respon))
                 } else {
-                    emit(ApiResponse.Empty)
+                    emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
                 emit(exceptionLog(e, "getStories"))
@@ -84,14 +84,14 @@ class RemoteDatasource(
         description: String,
         lat: Float,
         lon: Float
-    ): Flow<ApiResponse<GeneralResponse>> {
+    ): Flow<ApiRespon<GeneralRespon>> {
         return flow {
             try {
-                val response = apiService?.addNewStory(token, file, description.toRequestBody("text/plain".toMediaType()), lat, lon)
-                if (response != null) {
-                    emit(ApiResponse.Success(response))
+                val respon = apiService?.addNewStory(token, file, description.toRequestBody("text/plain".toMediaType()), lat, lon)
+                if (respon != null) {
+                    emit(ApiRespon.Success(respon))
                 } else {
-                    emit(ApiResponse.Empty)
+                    emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
                 emit(exceptionLog(e, "addNewStory"))
@@ -99,13 +99,13 @@ class RemoteDatasource(
         }.flowOn(Dispatchers.IO)
     }
 
-    private fun exceptionLog(e: Exception, tagLog: String): ApiResponse.Error {
+    private fun exceptionLog(e: Exception, tagLog: String): ApiRespon.Error {
         val tag = this::class.java.simpleName
 
         when (e) {
             is SocketTimeoutException -> {
                 Log.e(tag, e.message.toString())
-                return ApiResponse.Error(
+                return ApiRespon.Error(
                     e.message.toString() + ", " + context.resources.getString(
                         R.string.check_your_internet_connection
                     )
@@ -117,17 +117,17 @@ class RemoteDatasource(
                     val `object` = JSONObject(e.response()?.errorBody()?.string().toString())
                     val messageString: String = `object`.getString("message")
                     Log.e(tag, messageString)
-                    ApiResponse.Error(messageString)
+                    ApiRespon.Error(messageString)
                 } catch (e: Exception) {
                     val messageString = context.resources.getString(R.string.something_wrong)
                     Log.e(tag, messageString)
-                    ApiResponse.Error(messageString)
+                    ApiRespon.Error(messageString)
                 }
             }
 
             is NoSuchElementException -> {
                 Log.e(tag, e.message.toString())
-                return (ApiResponse.Error(
+                return (ApiRespon.Error(
                     e.message.toString() + ", " + context.resources.getString(
                         R.string.check_your_internet_connection
                     )
@@ -137,7 +137,7 @@ class RemoteDatasource(
             else -> {
                 val messageString = context.resources.getString(R.string.something_wrong)
                 Log.e(tag, e.message.toString())
-                return ApiResponse.Error(messageString)
+                return ApiRespon.Error(messageString)
             }
         }
     }
