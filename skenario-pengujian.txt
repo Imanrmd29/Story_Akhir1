@@ -1,0 +1,7 @@
+********************REGISTER VIEW MODEL*************************
+    a)	memastikan response sesuai dengan expectedResponse
+    b)	memastikan metode di class repository terpanggil
+    c)	memastikan response tidak null
+    d)	memastikan nilai yang didapatkan Resource.Success()
+    e)	memastikan nilai yang didapatkan bukan Resource.Error()
+    f)	memastikan status error false
