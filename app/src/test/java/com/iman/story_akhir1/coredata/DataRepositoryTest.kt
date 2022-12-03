@@ -73,24 +73,6 @@ class DataRepositoryTest{
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
-    @Test
-    fun `when login`()  = runTest {
-        val expectedResponse : Flow<ApiRespon<LoginRespon>> = flow {
-            emit(ApiRespon.Success(loginResponseMock))
-        }
-        `when`(remoteDatasource.doLogin(emailMock, passwordMock)).thenReturn(
-            expectedResponse
-        )
-        dataRepository.doLogin(emailMock, passwordMock).collect {
-            if (it !is Resource.Loading){
-                verify(remoteDatasource).doLogin(emailMock, passwordMock)
-                assertNotNull(it.data)
-                assertTrue(it is Resource.Success)
-                assertFalse(it is Resource.Error)
-                assertFalse(it.data?.error?:false)
-            }
-        }
-    }
 
     @Test
     fun `when register`()  = runTest {
@@ -103,69 +85,6 @@ class DataRepositoryTest{
         dataRepository.doRegister(emailMock, passwordMock, nameMock).collect {
             if (it !is Resource.Loading){
                 verify(remoteDatasource).doRegister(emailMock, passwordMock, nameMock)
-                assertNotNull(it.data)
-                assertTrue(it is Resource.Success)
-                assertFalse(it is Resource.Error)
-                assertFalse(it.data?.error?:false)
-            }
-        }
-    }
-
-    @Test
-    fun `when get stories`()  = runTest {
-        val data = PageDataSourceTest.snapshot(storyEntityMock)
-        val expectedResponse : Flow<PagingData<StoryEntity>> = flow {
-            emit(data)
-        }
-
-        `when`(storyPagingSource.getStories(tokenMock)).thenReturn(
-            expectedResponse
-        )
-        dataRepository.getStories(tokenMock).collect {
-            val differ = AsyncPagingDataDiffer(
-                diffCallback = HomeAdapter.DIFF_CALLBACK,
-                updateCallback = noopListUpdateCallback,
-                mainDispatcher = mainDispatcherRule.testDispatcher,
-                workerDispatcher = mainDispatcherRule.testDispatcher
-            )
-            CoroutineScope(Dispatchers.IO).launch {
-                differ.submitData(it)
-                advanceUntilIdle()
-                verify(storyPagingSource).getStories(tokenMock)
-                assertNotNull(differ.snapshot())
-                assertEquals(differ.snapshot().size, storyEntityMock.size)
-            }
-
-        }
-    }
-
-    @Test
-    fun `when get stories from local`()  = runTest {
-        val expectedResponse : Flow<List<StoryEntity>> = flow {
-            emit(storyEntityMock)
-        }
-        `when`(localDatasource.getStories()).thenReturn(
-            expectedResponse
-        )
-        dataRepository.getLocalStories().collect {
-            verify(localDatasource).getStories()
-            assertNotNull(it)
-            assertTrue(it.isNotEmpty())
-            assertEquals(it.size, storyEntityMock.size)
-        }
-    }
-
-    @Test
-    fun `when add story`()  = runTest {
-        val expectedResponse : Flow<ApiRespon<GeneralRespon>> = flow {
-            emit(ApiRespon.Success(generalResponseMock))
-        }
-        `when`(remoteDatasource.addNewStory(tokenMock, fileMock, descriptionMock, latitudeMock, longitudeMock)).thenReturn(
-            expectedResponse
-        )
-        dataRepository.addNewStory(tokenMock, fileMock, descriptionMock, latitudeMock, longitudeMock).collect {
-            if (it !is Resource.Loading){
-                verify(remoteDatasource).addNewStory(tokenMock, fileMock, descriptionMock, latitudeMock, longitudeMock)
                 assertNotNull(it.data)
                 assertTrue(it is Resource.Success)
                 assertFalse(it is Resource.Error)
