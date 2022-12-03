@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
 
-    <com.iman.story_akhir1.ui.custom.CustomButton
+    <com.iman.story_akhir1.ui.custom.CusButton
         android:id="@+id/retry_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

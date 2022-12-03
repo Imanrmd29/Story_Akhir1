@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Story App</string>
+    <string name="app_name">Story App Akhir</string>
     <string name="error_password">Password harus diisi minimal 6 karakter</string>
     <string name="error_email">Format email salah</string>
     <string name="error_mandatory_field">Wajib diisi</string>
@@ -21,8 +21,8 @@
     <string name="success_register">Successfully Registered</string>
     <string name="hai" translatable="false">Hai,</string>
     <string name="data_is_empty">Data is Empty</string>
-    <string name="open_camera">Open Camera</string>
-    <string name="open_gallery">Open Gallery</string>
+    <string name="open_camera">Camera</string>
+    <string name="open_gallery">Gallery</string>
     <string name="description">Description</string>
     <string name="add_new_story">Add New Story</string>
     <string name="success_add_new_story">Success Added New Story</string>
@@ -46,4 +46,10 @@
     <string name="photo_detail_story">photo_detail_story</string>
     <string name="user_name">user_name</string>
     <string name="detail_story">detail_story</string>
+
+    <string name="title_activity_maps">Maps Activity</string>
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
 </resources>

@@ -8,19 +8,15 @@ abstract class OnlineBoundRes<RequestType> {
     private var result: Flow<Resource<RequestType>> = flow {
 
         emit(Resource.Loading())
-        when (val apiResponse = createCall().first()) {
+        when (val apiRespon = createCall().first()) {
             is ApiRespon.Success -> {
-                getResponse(apiResponse.body)
-                emit(Resource.Success(apiResponse.body))
-                /* emitAll(
-                     getResponse(apiResponse.body).map {
-                     Resource.Success(it)
-                 })*/
+                getRespon(apiRespon.body)
+                emit(Resource.Success(apiRespon.body))
             }
             is ApiRespon.Empty -> {}
             is ApiRespon.Error -> {
-                emit(Resource.Error(apiResponse.errorMessage))
-                Log.e("OnlineBoundResource", apiResponse.errorMessage)
+                emit(Resource.Error(apiRespon.errorMessage))
+                Log.e("OnlineBoundRes", apiRespon.errorMessage)
             }
         }
 
@@ -28,7 +24,7 @@ abstract class OnlineBoundRes<RequestType> {
 
     protected abstract suspend fun createCall(): Flow<ApiRespon<RequestType>>
 
-    protected abstract fun getResponse(data: RequestType)
+    protected abstract fun getRespon(data: RequestType)
 
     fun asFlow(): Flow<Resource<RequestType>> = result
 }

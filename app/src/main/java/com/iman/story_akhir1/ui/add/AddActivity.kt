@@ -76,7 +76,7 @@ class AddActivity : AppCompatActivity(), LocationListener {
             title = "Add Story"
         }
 
-        with(binding) {
+            with(binding) {
             getLocation()
 
             btCamera.setOnClickListener {
@@ -157,7 +157,7 @@ class AddActivity : AppCompatActivity(), LocationListener {
         CamUtility.createCustomTempFile(application).also {
             val photoURI: Uri = FileProvider.getUriForFile(
                 this,
-                "com.story.app",
+                "com.iman.story_akhir1",
                 it
             )
             currentPhotoPath = it.absolutePath

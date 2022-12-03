@@ -24,7 +24,7 @@ class DataRepo(
                 return remoteDatasource.doLogin(email, password)
             }
 
-            override fun getResponse(data: LoginRespon) {
+            override fun getRespon(data: LoginRespon) {
                 sharedPreferenceProvider.setToken(data.loginResult?.token)
                 sharedPreferenceProvider.setUserId(data.loginResult?.userId)
                 sharedPreferenceProvider.setName(data.loginResult?.name)
@@ -42,7 +42,7 @@ class DataRepo(
                 return remoteDatasource.doRegister(email, password, name)
             }
 
-            override fun getResponse(data: GeneralRespon) {
+            override fun getRespon(data: GeneralRespon) {
 
             }
         }.asFlow()
@@ -59,9 +59,7 @@ class DataRepo(
             override suspend fun createCall(): Flow<ApiRespon<GeneralRespon>> {
                 return remoteDatasource.addNewStory(token, file, description, lat, lon)
             }
-
-            override fun getResponse(data: GeneralRespon) {
-
+            override fun getRespon(data: GeneralRespon) {
             }
         }.asFlow()
     }

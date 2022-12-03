@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/loading"
+        app:srcCompat="@drawable/logo_story"
         app:lottie_loop="true"
         android:elevation="8dp"/>
 

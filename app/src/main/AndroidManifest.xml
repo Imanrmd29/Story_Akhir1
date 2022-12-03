@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -21,11 +22,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Story_Akhir1"
-        tools:targetApi="31">
+        tools:targetApi="33">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB4H8M3d54T_asCsnZuNj5PsdDOQ59sDWY" />
+            android:value="AIzaSyCO0ZidgyJQJVUbryF944cJ6VvQwAETHVg" />
 
         <activity
             android:name=".ui.maps.MapsActivity"
@@ -61,7 +62,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.story.app"
+            android:authorities="com.iman.story_akhir1"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

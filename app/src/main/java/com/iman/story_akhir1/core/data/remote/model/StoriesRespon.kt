@@ -4,6 +4,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
+@Suppress("DEPRECATED_ANNOTATION")
 @Parcelize
 data class StoriesRespon(
 
@@ -17,6 +18,7 @@ data class StoriesRespon(
     val message: String? = null
 ) : Parcelable
 
+@Suppress("DEPRECATED_ANNOTATION")
 @Parcelize
 data class ListStoryItem(
 

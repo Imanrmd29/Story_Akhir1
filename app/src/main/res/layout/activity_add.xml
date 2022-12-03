@@ -89,7 +89,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.iman.story_akhir1.ui.custom.CustomButton
+    <com.iman.story_akhir1.ui.custom.CusButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add_new_story"

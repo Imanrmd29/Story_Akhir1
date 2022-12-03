@@ -12,7 +12,7 @@
         android:layout_width="126dp"
         android:layout_height="126dp"
         android:alpha="0"
-        app:lottie_rawRes="@raw/register"
+        app:srcCompat="@drawable/logo_story"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.iman.story_akhir1.ui.custom.CustomButton
+    <com.iman.story_akhir1.ui.custom.CusButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

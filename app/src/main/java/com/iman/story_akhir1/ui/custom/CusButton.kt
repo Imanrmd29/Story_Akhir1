@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import com.iman.story_akhir1.R
 
-class CustomButton: MaterialButton {
+class CusButton: MaterialButton {
     private lateinit var enabledBackground: Drawable
     private lateinit var disabledBackground: Drawable
     private var txtColor: Int = 0
@@ -31,16 +31,14 @@ class CustomButton: MaterialButton {
     }
 
     private fun init() {
-        txtColor = ContextCompat.getColor(context, android.R.color.background_light)
-        enabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button) as Drawable
-        disabledBackground =
-            ContextCompat.getDrawable(context, R.drawable.bg_button_disable) as Drawable
+        txtColor = ContextCompat.getColor(context, R.color.pink_gelap)
+        enabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button_putih) as Drawable
+        disabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button_disable) as Drawable
 
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-
         background = if (isEnabled) enabledBackground else disabledBackground
         setTextColor(txtColor)
         textSize = 12f
