@@ -36,7 +36,6 @@ class SharedPreferenceProvider(context: Context) {
 
     private val editor: SharedPreferences.Editor = pref.edit()
 
-    //save function
     private fun setString(key: String, value: String?) {
         editor.putString(key, value)
         editor.apply()

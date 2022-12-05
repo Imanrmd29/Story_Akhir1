@@ -31,6 +31,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = "Google Maps"
+
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)

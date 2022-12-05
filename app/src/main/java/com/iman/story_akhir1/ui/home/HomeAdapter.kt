@@ -1,5 +1,6 @@
 package com.iman.story_akhir1.ui.home
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,6 +11,8 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.iman.story_akhir1.R
+import com.iman.story_akhir1.com.CamUtility.getTimeLineUploaded
 import com.iman.story_akhir1.core.data.local.entity.StoryEntity
 import com.iman.story_akhir1.databinding.ItemDihomeBinding
 import com.iman.story_akhir1.ui.detail.DetailActivity
@@ -40,10 +43,20 @@ class HomeAdapter : PagingDataAdapter<StoryEntity, HomeAdapter.ViewHolder>(DIFF_
     }
 
     class ViewHolder(private val binding: ItemDihomeBinding) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(result: StoryEntity?) {
             with(binding) {
                 result?.apply {
                     tvStory.text = name
+                    ivUploadTimeStory.text =
+                        "Waktu ${itemView.context.getString(R.string.text_uploaded)} ${
+                            result.createdAt?.let {
+                                getTimeLineUploaded(
+                                    itemView.context,
+                                    it
+                                )
+                            }
+                        }"
                     Glide.with(binding.root)
                         .load(photoUrl)
                         .into(ivStory)
@@ -54,6 +67,7 @@ class HomeAdapter : PagingDataAdapter<StoryEntity, HomeAdapter.ViewHolder>(DIFF_
                                 itemView.context as Activity,
                                 Pair(ivStory, "image"),
                                 Pair(tvStory, "name")
+
                             )
                         Intent(itemView.context, DetailActivity::class.java)
                             .apply {

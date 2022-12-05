@@ -46,10 +46,15 @@
     <string name="photo_detail_story">photo_detail_story</string>
     <string name="user_name">user_name</string>
     <string name="detail_story">detail_story</string>
+    <string name="text_uploaded">Uploaded on</string>
 
     <string name="title_activity_maps">Maps Activity</string>
     <string name="normal_type">Normal</string>
     <string name="satellite_type">Satellite</string>
     <string name="terrain_type">Terrain</string>
     <string name="hybrid_type">Hybrid</string>
+    <string name="second_ago">detik</string>
+    <string name="minutes_ago">menit</string>
+    <string name="hours_ago">jam</string>
+    <string name="days_ago">hari</string>
 </resources>

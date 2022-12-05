@@ -88,6 +88,7 @@ class AddActivity : AppCompatActivity(), LocationListener {
             }
 
             etDescription.globalChange()
+
             btnSubmit.setOnClickListener {
                 val token = SharedPreferenceProvider(applicationContext).getToken()!!
                 val file = reduceFileImage(getFile as File)
@@ -96,6 +97,7 @@ class AddActivity : AppCompatActivity(), LocationListener {
                 val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                     "photo",
                     file.name,
+
                     requestImageFile
                 )
                 viewModel.setStoryParam(token, imageMultipart, description, lat, lon)
@@ -181,6 +183,7 @@ class AddActivity : AppCompatActivity(), LocationListener {
 
         return myFile
     }
+
 
     private fun CustomTextInput.globalChange() {
         this.addTextChangedListener(object : TextWatcher {

@@ -17,6 +17,8 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = "Detail Story"
+
         val extras = intent.extras
         val data = extras?.getParcelable<StoryEntity>(HomeAdapter.EXTRA_STORY)
 
