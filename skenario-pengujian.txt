@@ -1,6 +1,6 @@
-## SKENARIO PENGUJIAN
+SKENARIO PENGUJIAN
 
-**LOGIN VIEW MODEL**
+**********************LOGIN VIEW MODEL*********************************
     a)	ketika berhasil login
         i)	    memastikan response sesuai dengan expectedResponse
         ii)	    memastikan metode di class repository terpanggil
@@ -14,6 +14,7 @@
         iii)	memastikan response null
         iv)     memastikan pesan exception tidak null
         v)      memastikan response sesuai dengan expectedResponse
+        
 *********************REGISTER VIEW MODEL****************************
     a)	memastikan response sesuai dengan expectedResponse
     b)	memastikan metode di class repository terpanggil
@@ -28,14 +29,14 @@
     c)	memastikan response tidak null
     d)  memastikan banyak data sama dengan banyak data dummy
 
-5)	maps view model
+***********************MAPS VIEW MODEL********************************
     a)	memastikan response sesuai dengan expectedResponse
     b)	memastikan metode di class repository terpanggil
     c)	memastikan data tidak null
     d) 	memastikan data tidak kosong
     e)	memastikan banyak data sama dengan banyak data dummy
 
-6)	Data Repository
+***********************DATA REPOSITORY********************************
     a)	berhasil melakukan login
         i)	    memastikan response sesuai dengan expectedResponse
         ii)	    memastikan metode di class repository terpanggil
