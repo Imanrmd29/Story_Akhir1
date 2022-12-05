@@ -41,16 +41,6 @@ class SharedPreferenceProvider(context: Context) {
         editor.apply()
     }
 
-    private fun setInt(key: String, value: Int?) {
-        editor.putInt(key, value ?: 0)
-        editor.apply()
-    }
-
-    private fun setBoolean(key: String, value: Boolean?) {
-        editor.putBoolean(key, value ?: false)
-        editor.apply()
-    }
-
     fun setToken(token: String?) {
         setString(TOKEN_SHARED_PREF_KEY, token)
     }
@@ -64,8 +54,6 @@ class SharedPreferenceProvider(context: Context) {
     }
 
     fun getToken() = pref.getString(TOKEN_SHARED_PREF_KEY, null)
-
-    fun getUserId() = pref.getString(USER_ID_SHARED_PREF_KEY, null)
 
     fun getName() = pref.getString(NAME_SHARED_PREF_KEY, null)
 

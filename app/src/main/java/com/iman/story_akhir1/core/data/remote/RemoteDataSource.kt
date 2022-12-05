@@ -34,7 +34,7 @@ class RemoteDatasource(
                     emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
-                emit(exceptionLog(e, "doLogin"))
+                emit(exceptionLog(e))
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -53,7 +53,7 @@ class RemoteDatasource(
                     emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
-                emit(exceptionLog(e, "doRegister"))
+                emit(exceptionLog(e))
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -73,7 +73,7 @@ class RemoteDatasource(
                     emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
-                emit(exceptionLog(e, "getStories"))
+                emit(exceptionLog(e))
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -94,12 +94,12 @@ class RemoteDatasource(
                     emit(ApiRespon.Empty)
                 }
             } catch (e: Exception) {
-                emit(exceptionLog(e, "addNewStory"))
+                emit(exceptionLog(e))
             }
         }.flowOn(Dispatchers.IO)
     }
 
-    private fun exceptionLog(e: Exception, tagLog: String): ApiRespon.Error {
+    private fun exceptionLog(e: Exception): ApiRespon.Error {
         val tag = this::class.java.simpleName
 
         when (e) {

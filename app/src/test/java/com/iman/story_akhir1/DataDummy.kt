@@ -17,7 +17,7 @@ object DataDummy {
                 "message": "success",
                 "loginResult": {
                     "userId": "user-tkztmV-mCHGD628D",
-                    "name": "dyas",
+                    "name": "Iman Ramadhan",
                     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyLXRrenRtVi1tQ0hHRDYyOEQiLCJpYXQiOjE2NjcxMTcyMTZ9.sR3fwAxHj64b5aGa7KfuhlGaQzw-zUx2hn8t_kjt0W0"
                 }
             }
@@ -37,7 +37,7 @@ object DataDummy {
             [
                 {
                     "id":"story-Yt41Z0zJlmiDpJ_O",
-                    "name":"Tri 2","description":
+                    "name":"Iman R","description":
                     "test",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667116639270_5GyOKhkV.jpg",
                     "createdAt":"2022-10-30T07:57:19.278Z",
@@ -46,7 +46,7 @@ object DataDummy {
                 },
                 {
                     "id":"story-q-N_8-au4cP5Xp--",
-                    "name":"Tri 2",
+                    "name":"Ipank",
                     "description":"test",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667115505741_gd1fjMip.jpg",
                     "createdAt":"2022-10-30T07:38:25.744Z",
@@ -55,7 +55,7 @@ object DataDummy {
                 },
                 {
                     "id":"story-phZv-UR2pV5a2YBZ",
-                    "name":"MF",
+                    "name":"Man",
                     "description":"g",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667114434086_N0K5X9kK.jpg",
                     "createdAt":"2022-10-30T07:20:34.088Z",
@@ -73,7 +73,7 @@ object DataDummy {
                 },
                 {
                     "id":"story-34GERswBgrFdqflA",
-                    "name":"joko",
+                    "name":"bukan iman",
                     "description":"tes koarmada jakarta",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667113892387_cJ5aBqe-.jpg",
                     "createdAt":"2022-10-30T07:11:32.390Z",
@@ -90,7 +90,7 @@ object DataDummy {
                 },
                 {
                     "id":"story-1oJAIVFHUsZ4DMw9",
-                    "name":"joko",
+                    "name":"iman 2",
                     "description":"tes permission d monas",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667113470048__F_kHIPv.jpg",
                     "createdAt":"2022-10-30T07:04:30.051Z",
@@ -99,7 +99,7 @@ object DataDummy {
                 },
                 {
                     "id":"story-JlEyRMVRPnuhsRY4",
-                    "name":"Tri 2",
+                    "name":"Rama 2",
                     "description":"hot crazy",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667113314630_8EKFv-Wa.jpg",
                     "createdAt":"2022-10-30T07:01:54.631Z",
@@ -107,7 +107,7 @@ object DataDummy {
                 },
                 {
                     "id":"story-MiDdIWITEM0kGq2L",
-                    "name":"joko",
+                    "name":"Rama 2",
                     "description":"tes galery dan lapangan banteng, masih jakarta",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667112572752_w-6y15Ro.jpg",
                     "createdAt":"2022-10-30T06:49:32.754Z",
@@ -115,7 +115,7 @@ object DataDummy {
                 },
                 {
                     "id":"story-fjQZaR7nTaoGazC1",
-                    "name":"joko",
+                    "name":"Ramadhan",
                     "description":"tes jakarta dan camerax",
                     "photoUrl":"https://story-api.dicoding.dev/images/stories/photos-1667112478961_-94LQZ2I.jpg",
                     "createdAt":"2022-10-30T06:47:58.964Z",

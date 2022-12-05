@@ -132,6 +132,5 @@ class LoginActivity : AppCompatActivity() {
     }
 
     companion object{
-        const val EXTRA_TOKEN = "extra-token"
     }
 }

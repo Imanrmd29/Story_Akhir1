@@ -22,7 +22,7 @@ import org.mockito.junit.MockitoJUnitRunner
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
-class RegisterViewModelTest {
+class RegisterViewModelTest{
     @get:Rule
     val instantExecutorRule = InstantTaskExecutorRule()
 
@@ -31,9 +31,9 @@ class RegisterViewModelTest {
 
     private lateinit var registerViewModel: RegisterViewModel
     private val generalResponse = DataDummy.generalResponse()
-    private val emailMock = "bukan@email.com"
+    private val emailMock = "iman@email.com"
     private val passwordMock = "12345678"
-    private val nameMock = "bukan nama"
+    private val nameMock = "bukan iman"
 
     @Before
     fun setUp() {
@@ -45,8 +45,8 @@ class RegisterViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     @Test
-    fun `when register`() = runTest {
-        val expectedResponse: Flow<Resource<GeneralRespon>> = flow {
+    fun `when register`()  = runTest {
+        val expectedResponse : Flow<Resource<GeneralRespon>> = flow {
             emit(Resource.Success(generalResponse))
         }
         Mockito.`when`(dataRepository.doRegister(emailMock, passwordMock, nameMock)).thenReturn(
@@ -57,7 +57,7 @@ class RegisterViewModelTest {
             assertNotNull(it.data)
             assertTrue(it is Resource.Success)
             assertFalse(it is Resource.Error)
-            assertFalse(it.data?.error ?: false)
+            assertFalse(it.data?.error?:false)
         }
     }
 }

@@ -14,6 +14,7 @@ import com.iman.story_akhir1.databinding.ActivityRegisterBinding
 import com.iman.story_akhir1.ui.custom.CustomTextInput
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@Suppress("DEPRECATION")
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
