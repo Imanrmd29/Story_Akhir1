@@ -65,4 +65,18 @@ Berikut dalam menambahkan cerita baru:
 
 # Menampilkan Animasi
 
-Menampilkan animasi pada aplikasi dengan menggunakan Motion Animation
+Menampilkan animasi pada aplikasi dengan menggunakan Lottie Animation
+
+# Menampilkan Maps
+
+Menampilkan satu halaman baru berisi peta yang menampilkan semua cerita yang memiliki lokasi dengan benar. Bisa berupa marker maupun icon berupa gambar. Data story yang memiliki lokasi latitude dan longitude dapat diambil melalui parameter location dari database.
+
+# Paging List
+
+Menampilkan list story dengan menggunakan Paging 3 dengan benar.
+
+# Membuat Testing
+
+Menerapkan unit test pada fungsi di dalam ViewModel yang mengambil list data Paging.
+
+# Membuat skenario hasil testing yang sudah di buat di ViewModel
