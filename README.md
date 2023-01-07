@@ -1,4 +1,4 @@
-# Aplikasi Story App
+# Component Aplikasi Story App
 
 # Halaman Autentikasi
 
@@ -16,9 +16,9 @@ Membuat halaman register untuk mendaftarkan diri dalam aplikasi.
 
 - Password (R.id.ed_register_password)
 
-Password wajib disembunyikan.
+Password yang disembunyikan.
 
-Membuat Custom View berupa EditText pada halaman login atau register.
+Menggunakan Custom View berupa EditText pada halaman login atau register.
 
 Menyimpan data sesi dan token di preferences. Data sesi digunakan untuk mengatur alur aplikasi dengan spesifikasi seperti berikut.
 
@@ -36,9 +36,9 @@ Menampilkan daftar cerita dari API yang disediakan.
 
 - Nama user (R.id.tv_item_name)
 
--  Foto  (R.id.iv_item_photo)
+- Foto  (R.id.iv_item_photo)
 
-Muncul halaman detail ketika salah satu item cerita ditekan.
+Muncul halaman detail ketika cerita ditekan.
 
 - Nama user (R.id.tv_detail_name)
 
@@ -49,7 +49,7 @@ Muncul halaman detail ketika salah satu item cerita ditekan.
 
 # Tambah Cerita
 
-Membuat halaman untuk menambah cerita baru yang dapat diakses dari halaman daftar cerita.
+Halaman untuk menambah cerita baru yang dapat diakses dari halaman daftar cerita.
 
 - File foto
 
@@ -61,7 +61,7 @@ Berikut dalam menambahkan cerita baru:
 
 - Setelah tombol tersebut diklik dan proses upload berhasil, maka akan kembali ke halaman daftar cerita. 
 
-- Data cerita terbaru harus muncul di paling atas.
+- Data cerita terbaru muncul di paling atas.
 
 # Menampilkan Animasi
 
@@ -69,11 +69,11 @@ Menampilkan animasi pada aplikasi dengan menggunakan Lottie Animation
 
 # Menampilkan Maps
 
-Menampilkan satu halaman baru berisi peta yang menampilkan semua cerita yang memiliki lokasi dengan benar. Bisa berupa marker maupun icon berupa gambar. Data story yang memiliki lokasi latitude dan longitude dapat diambil melalui parameter location dari database.
+Satu halaman baru berisi peta yang menampilkan semua cerita yang memiliki lokasi dengan benar. Dengan menggunakan marker. Data story yang memiliki lokasi latitude dan longitude dapat diambil melalui parameter location dari database.
 
 # Paging List
 
-Menampilkan list story dengan menggunakan Paging 3 dengan benar.
+Menampilkan list story dengan menggunakan Paging 3.
 
 # Membuat Testing
 
